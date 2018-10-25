@@ -9,7 +9,7 @@ use rustc_plugin::registry::Registry;
 use rustc_target::spec::abi::Abi;
 use syntax::ast::{Attribute, Ident, Item, ItemKind, MetaItem, Mod, Name, Ty, VisibilityKind};
 use syntax::attr;
-use syntax::codemap::Span;
+use syntax::source_map::Span;
 use syntax::ext::base::SyntaxExtension::{MultiModifier, NormalTT};
 use syntax::ext::base::{Annotatable, ExtCtxt, MacEager, MacResult, MultiItemModifier,
                         TTMacroExpander};
@@ -56,6 +56,7 @@ pub fn plugin_registrar(reg: &mut Registry) {
             def_info: None,
             allow_internal_unsafe: false,
             allow_internal_unstable: false,
+            local_inner_macros: false,
             unstable_feature: None,
             edition: Edition::Edition2015
         },

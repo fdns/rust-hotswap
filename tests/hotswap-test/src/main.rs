@@ -1,4 +1,4 @@
-#![feature(plugin, const_fn)]
+#![feature(plugin, const_fn, custom_inner_attributes)]
 #![plugin(hotswap)]
 #![hotswap_header]
 

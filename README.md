@@ -20,7 +20,7 @@ Beware that the library is a prototype for now, and it may crash frequently.
 ## Usage
 - Add the `hotswap` and `hotswap-runtime` dependencies to your `Cargo.toml`.
 - Add a `dylib` build with the same project name and path to your `Cargo.toml`.
-- Add the `#![feature(plugin, const_fn)]` feature gates.
+- Add the `#![feature(plugin, const_fn, custom_inner_attributes)]` feature gates.
 - Import the plugin `#![plugin(hotswap)]`.
 - Annotate the functions you want to hotswap with the `#[hotswap]` modifier.
 - Add `#![hotswap_header]` attribute to the top of your program.
@@ -55,7 +55,7 @@ hotswap-runtime = "*"
 ```rust
 // main.rs
 
-#![feature(plugin, const_fn)]
+#![feature(plugin, const_fn, custom_inner_attributes)]
 #![plugin(hotswap)]
 #![hotswap_header]
 

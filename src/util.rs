@@ -31,7 +31,7 @@ pub fn mod_walk(mut m: Mod, item_map: &mut FnMut(Item) -> Item) -> Mod {
 }
 pub mod syntax {
     use syntax::ast::{FnDecl, FunctionRetTy, Ident, Item, ItemKind, PatKind, Ty};
-    use syntax::codemap;
+    use syntax::source_map;
     use syntax::ext::base::ExtCtxt;
     use syntax::ext::quote::rt::ToTokens;
     use syntax::parse::token;
@@ -58,7 +58,7 @@ pub mod syntax {
             .iter()
             .map(|t| t.to_tokens(cx))
             .collect::<Vec<_>>()
-            .join(&TokenTree::Token(codemap::DUMMY_SP, token::Comma))
+            .join(&TokenTree::Token(source_map::DUMMY_SP, token::Comma))
     }
 
     fn ident_name(ident: &Ident) -> String {
